@@ -1,7 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Instalación e iniciación del servidor en Windows
+
+* Ir a http://railsinstaller.org/en y descargar la versión Windows ruby 2.1. 
+  Con esto lo que están haciendo es descargar un instalador que instala ruby, ruby on rails, y la db de testing automaticamente.
+* Entrar via consola a la carpeta del proyecto
+* ejecutar el comando: 
+  bundle install
+* luego ejecutar:
+  rake db:setup
+* y por ultimo:
+  rails s
+  
+  Este último comando levanta el servidor en localhost, puerto: 3000
+
+== TODO
 
 Things you may want to cover:
 
