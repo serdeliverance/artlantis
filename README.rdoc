@@ -2,6 +2,7 @@
 
 == Instalación e iniciación del servidor en Windows
 
+* Instlar Git en windows
 * Ir a http://railsinstaller.org/en y descargar la versión Windows ruby 2.1. 
   Con esto lo que están haciendo es descargar un instalador que instala ruby, ruby on rails, y la db de testing automaticamente.
 * Entrar via consola a la carpeta del proyecto
