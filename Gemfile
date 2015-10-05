@@ -42,6 +42,9 @@ gem 'bootstrap-will_paginate', '0.0.10'
 # To create fake users for testing
 gem 'faker',                '1.4.2'
 
+# To use html5boilerplate
+gem "rails-boilerplate"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
