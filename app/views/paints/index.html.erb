@@ -1,0 +1,16 @@
+<h1><%= @user.name %>'s Art Galarey</h1>
+
+<% @user.paints.each do |p| %>
+
+<div>
+	<h2><%= p.title %></h2>
+	<p>
+	  <%= image_tag p.paint.url(:small) %>
+	</p>
+	<p>
+		<%= p.description %>
+	</p>
+</div>
+
+<% end %>
+

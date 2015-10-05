@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'paints/index'
+
+  get 'paints/new'
+
+  get 'paints/create'
+
+  get 'paints/show'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,8 +17,18 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  get 'signup'  => 'users#new'
-  resources :users
+  get     'help'    => 'static_pages#help'
+  get     'about'   => 'static_pages#about'
+  get     'contact' => 'static_pages#contact'
+  get     'signup'  => 'users#new'
+  get     'login'   => 'sessions#new'
+  post    'login'   => 'sessions#create'
+  delete  'logout'  => 'sessions#destroy'
+  
+  resources :users do
+    resources :paints  
+  end
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

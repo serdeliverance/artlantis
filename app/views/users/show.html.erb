@@ -1,5 +1,15 @@
 <% provide(:title, @user.name) %>
-<h1>
-	<%= gravatar_for @user %>
-	<%= @user.name %>
-</h1>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+  		<%= image_tag @user.avatar.url(:small) %>
+        <%= @user.name %>
+      </h1>
+      <h2>See my art gallery!!</h2>
+      <% @user.paints.each do |paint| %>
+      	<%= render paint %>
+      <% end %>
+    </section>
+  </aside>
+</div>
