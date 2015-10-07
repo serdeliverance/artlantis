@@ -1,35 +1,3 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
-<div>
-  <div>
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :sex %>
-      <%= f.text_field :sex %>
-
-      <%= f.label :age %>
-      <%= f.text_field :age %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label "Choose yout profile photo" %>
-      <%= f.file_field :avatar %>
-    
-      <%= f.submit "Create my account" %>
-      
-    <% end %>
-  </div>
+<div id="signup" class="modal"> 
+  <%= render  "form"%>
 </div>
-

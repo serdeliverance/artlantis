@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Artlantis MVP work in progress</title>
+  <link rel="icon" type="image/png" href="favico.png">
+    
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+</head>
+<body onload="Materialize.fadeInImage('#fade-1')" class="white noselect">
+<header>
+	<!-- NAV BAR -->
+	<nav>
+		<div class="nav-wrapper">
+		<a href="index.html" class="brand-logo"><img src="logo.png"  class="responsive-img"></a>
+		<ul id="nav-mobile" class="right hide-on-med-and-down">
+			<li><a href="browse.html">BROWSE</a></li>
+			<li><a href="howitworks.html">HOW IT WORKS</a></li>
+			<li class="active"><a href="#subscribe" class="modal-trigger"><b>GO PRO</b></a></li>
+			<li><a class="dropdown-button" href="#" data-activates='dropdown1'  data-beloworigin="true">Welcome, <b>Wayne Barlowe</b>!</a></li>
+			 <ul id='dropdown1' class='dropdown-content'>
+				<li><a href="sample_portfolio.html">My Shop</a></li>
+				<li><a href="#account">Account</a></li>
+				<li><a href="#comm">Pending Commissions</a></li>
+				<li><a href="tutorial.html">Tutorial</a></li>
+			  </ul>
+		</ul>
+		</div>
+	</nav>
+	<!-- FIN NAV BAR -->
+</header>
+<main>
+
+	<!-- BEGIN CONTENT -->
+    <div class="container max-width">
+    <div class="section">
+		<div class="row">
+			<div class="col s6 m3"><img src="img/s1.jpg" class="circle responsive-img"></div>
+            <div class="col s6 m9"><h3>Welcome, <b>Wayne</b>!</h3></div>
+             <div class="row">
+				<div class="col s12">
+				  <ul class="tabs">
+					<li class="tab col s4"><a href="#shop">My Shop</a></li>
+					<li class="tab col s4"><a class="active" href="#account">Account</a></li>
+					<li class="tab col s4"><a href="#comm">Pending Commissions</a></li>
+				  </ul>
+				</div>
+				<div id="shop" class="col s12">
+					<ul class="collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">Edit your description</div>
+							<div class="collapsible-body" align="right">
+								<label for="textarea1">Describe who you are and what you do!</label>
+								<textarea id="text" class="materialize-textarea"></textarea>
+								<a href="#!" class="waves-effect waves-green btn-flat">Save</a>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Manage your commission slots</div>
+							<div class="collapsible-body" align="center">
+								<div class="row">
+									You're currently offering the following services: <br><br>
+									
+									<a href="#slot1" class="modal-trigger">
+									<div class="col s12 m6">
+										<div class="card small">
+											<div class="card-image waves-effect waves-block waves-light">
+												<img data-caption="A beautiful artpiece with a touch of red melo-drama" src="img/p3.jpg">
+											</div>
+											<div class="card-content">
+											<span class="card-title grey-text text-darken-3">Colored painting</span>
+											<p><span class ="green-text text-darken-2">$75</span> / <span class ="green-text text-darken-2">1 week</span> / <span class ="green-text text-darken-2">3 pieces</a></span>
+											</div>
+										</div>
+									</div>
+									</a>
+									<a href="#slot2" class="modal-trigger">
+									<div class="col s12 m6">
+										<div class="card small">
+											<div class="card-image waves-effect waves-block waves-light">
+												<img data-caption="A beautiful artpiece with a touch of red melo-drama" src="img/p4.jpg">
+											</div>
+											<div class="card-content">
+											<span class="card-title grey-text text-darken-3">Colored painting</span>
+											<p><span class ="green-text text-darken-2">$75</span> / <span class ="green-text text-darken-2">1 week</span> / <span class ="green-text text-darken-2">3 pieces</a></span>
+											</div>
+										</div>
+									</div>
+									</a>
+									<br><br><br>
+									Want to upload another one? <br>
+									<form action="#" class="col s12">
+										<div class="input-field col s12"><input id="title"  placeholder="SERVICE TITLE" type="text" class="validate"></div>
+									<div class="row">
+										<div class="input-field col s4"><input id="price" placeholder="PRICE" type="text" class="validate"></div>
+										<div class="input-field col s4"><input id="slots"  placeholder="# OF SLOTS" type="text" class="validate"></div>
+										<div class="input-field col s4"><input id="time"  placeholder="TIME TO COMPLETE" type="text" class="validate"></div>
+									</div>
+										<textarea id="desc" class="materialize-textarea" placeholder="Describe what you're offering. Don't leave out any details!"></textarea>
+										<div class="file-field input-field">
+											<div class="btn"><span>Select sample image</span><input type="file"></div>
+											<div class="file-path-wrapper"><input class="file-path validate" type="text"></div>
+										</div>
+									<div class="row" align="right">
+										<a href="#!" class="waves-effect waves-green btn-flat">Save</a>
+										<a href="#!" class="waves-effect waves-green btn-flat">Cancel</a>
+									</div>
+									</form>
+								</div>
+							</div>
+						</li>
+					  </ul>
+				</div>
+				<div id="account" class="col s12">
+					<ul class="collapsible" data-collapsible="accordion">
+						<li>
+							<div class="collapsible-header">Change your password</div>
+							<div class="collapsible-body" align="right">
+								<div class="input-field"><input placeholder="New Password" id="newpass" type="text" class="validate"></div>
+								<div class="input-field"><input placeholder="Old Password" id="oldpass" type="text" class="validate"></div>
+								<a href="#!" class="waves-effect waves-green btn-flat">Change your password</a>
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">Change your email</div>
+							<div class="collapsible-body" align="right">
+								<center>Your current email is:<b> waynebarlowe@gmail.com</b></center>
+								<div class="input-field"><input placeholder="New Email" id="newmail" type="text" class="validate"></div>
+								<a href="#!" class="waves-effect waves-green btn-flat">Save</a>
+							</div>
+						</li>
+						<li>
+						  <div class="collapsible-header">Billing info</div>
+						  <div class="collapsible-body"  align="right">
+									<center>We're currently transferring your payments to the Paypal account associated to: <b> waynebarlowe@gmail.com</b></center>
+									<div class="input-field"><input disabled placeholder="Not available for now!" id="newmail" type="text" class="validate"></div>
+									<a href="#!" disabled class="waves-effect waves-green btn-flat">Save</a>
+						  </div>
+						</li>
+						<li>
+						  <div class="collapsible-header">Change your icon</div>
+						  <div class="collapsible-body"  align="right">
+								<form action="#">
+									<div class="file-field input-field">
+									<div class="btn">
+										<span>Select file</span>
+										<input type="file">
+									</div>
+									<div class="file-path-wrapper">
+										<input class="file-path validate" type="text">
+									</div>
+									</div>
+								</form>
+									<a href="#!" disabled class="waves-effect waves-green btn-flat">Upload</a>
+						  </div>
+						</li>
+					  </ul>
+				</div>
+				<div id="comm" class="col s12"><br><br>Not available yet, sorry! We're working on it!</div>
+			  </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container max-width">
+    <div class="section" id="fade-1">
+		<div class="row">       
+			
+		</div>
+    </div>
+  </div>
+	
+	<!-- END CONTENT -->
+		
+	<!-- BEGIN MODAL SCREENS -->
+	<div id="sorry" class="modal modal-art">
+		<div class="modal-content">
+			<h6>We're so sorry! But we're working on this feature. We'll email you when it's available :D</h6>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+		</div>
+	</div>
+	
+	<div id="subscribe" class="modal modal-art">
+		<div class="modal-content">
+			<h4>Go <b>Pro</b> now!</h4>
+			<h6>What do you get out of it?</h6>
+			<i class="material-icons">shopping_cart</i>You'll have the <b>secure transaction</b> option free of charge!<br>			
+			<i class="material-icons">thumb_up</i>You get <b>more slots</b> for your shop.<br>
+			<i class="material-icons">grade</i>You get the star treatment in our frontpage. We'll make you our <b>featured</b> artist.<br>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Not today!</a>
+			<a href="#sorry" class="modal-trigger modal-close waves-effect waves-green btn-flat">I want to go pro!</a>
+		</div>
+	</div>
+	
+	
+	<div id="slot1" class="modal modal-art">
+		<div class="modal-content">
+			<form action="#">
+			<div class="row">
+				<div class="col s4">
+					<img class="responsive-img" src="img/p1.jpg">
+					<div class="file-field input-field">
+						<div class="btn">
+							<span>Change file</span>
+							<input type="file">
+						</div>
+					</div>
+				</div>
+				<div class="col s8">
+					<input placeholder="Colored painting" id="title" type="text" class="validate">
+					<input placeholder="75" id="price" type="text" class="validate">
+					<input placeholder="3 pieces" id="slots" type="text" class="validate">
+					<input placeholder="1 week" id="time" type="text" class="validate">
+					<textarea id="desc" class="materialize-textarea" placeholder="Describe what you're offering. Don't leave out any details!"></textarea>			
+				</div>				
+			</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+	<div id="slot2" class="modal modal-art">
+		<div class="modal-content">
+			<form action="#">
+			<div class="row">
+				<div class="col s4">
+					<img class="responsive-img" src="img/p2.jpg">
+					<div class="file-field input-field">
+						<div class="btn">
+							<span>Change file</span>
+							<input type="file">
+						</div>
+					</div>
+				</div>
+				<div class="col s8">
+					<input placeholder="Colored painting" id="title" type="text" class="validate">
+					<input placeholder="75" id="price" type="text" class="validate">
+					<input placeholder="3 pieces" id="slots" type="text" class="validate">
+					<input placeholder="1 week" id="time" type="text" class="validate">
+					<textarea id="desc" class="materialize-textarea" placeholder="Describe what you're offering. Don't leave out any details!"></textarea>			
+				</div>				
+			</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+	
+	<div id="signup" class="modal">
+		<div class="modal-content">
+			<div class="input-field">
+				<input placeholder="YOUR USERNAME" id="username" type="text" class="validate"></div>
+			<div class="input-field"><input placeholder="YOUR EMAIL" id="email" type="text" class="validate"></div>
+			<div class="input-field"><input placeholder="YOUR PASSWORD" id="password" type="text" class="validate"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="#signed" class="modal-trigger modal-close waves-effect waves-green btn-flat">Sign me up!</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+	<div id="signed" class="modal">
+		<div class="modal-content">
+			<p>Thank you for registering! <br> Sign in so you can start building your own artshop ;)</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+	
+	<div id="signin" class="modal">
+		<div class="modal-content">
+			<div class="input-field">
+				<input placeholder="USERNAME" id="username" type="text" class="validate">
+			</div>
+			<div class="input-field"><input placeholder="PASSWORD" id="password" type="text" class="validate"></div>
+		</div>
+		<div class="modal-footer">
+			<a href="index_signedin.html" class="modal-action modal-close waves-effect waves-green btn-flat">SIGN IN</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+	
+	<div id="contact" class="modal">
+		<div class="modal-content">
+			<div class="input-field">
+				<input placeholder="Your name" id="Name" type="text" class="validate">
+			</div>
+			<div class="input-field"><input placeholder="An email address we can reply to" id="email" type="text" class="validate"></div>
+			<div class="input-field">
+				<textarea id="text" class="materialize-textarea"></textarea>
+				<label for="textarea1">What can we help you with?</label>
+        </div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Send</a>
+			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+		</div>
+	</div>
+	
+	<!-- END MODAL SCREENS -->
+</main>
+<footer>
+	<!-- BEGIN FOOTER -->
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+              <div class="col l4 offset-l2 s12">
+				<ul>
+                  <li><a class="grey-text text-lighten-3" href="about.html">About Us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="privacy.html">Privacy</a></li>
+                  <li><a class="grey-text text-lighten-3" href="terms.html">Terms</a></li>
+                  <li><a class="grey-text text-lighten-3" href="faq.html">FAQ</a></li>
+                </ul>
+              </div>
+			  <div class="col l4 offset-l2 s12">
+				<ul>
+                  <li><a class="grey-text text-lighten-3 modal-trigger" href="#contact">Contact us</a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://artlantis.tumblr.com">Our Blog</a></li>
+                </ul>
+              </div>
+			</div>
+		</div>
+		<div class="footer-copyright center">© 2015 Artlantis</div>
+	</footer>
+	<!-- END FOOTER -->
+</footer>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+	<script>
+	$(document).ready(function() {
+	$('.modal-trigger').leanModal();
+	});
+	</script>
+  </body>
+</html>

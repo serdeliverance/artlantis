@@ -1,18 +1,104 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ArtAtlantis</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-        <% flash.each do |message_type, message| %>
-          <div><%= message %></div>
-        <% end %>
-        <%= yield %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Artlantis MVP work in progress</title>
+  <%=favicon_link_tag 'favico.png', type: 'image/png'%>
+    
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag 'style.css', media: 'all',
+                                   'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'materialize.css', media: 'all',
+                                   'data-turbolinks-track' => true %>
+
+</head>
+
+<body onload="Materialize.fadeInImage('#fade-1')" class="white noselect">
+<header>
+  <!-- NAV BAR -->
+  <nav>
+    <div class="nav-wrapper">
+    <%= link_to root_path do %>
+       <%= image_tag "logo.png", class: "responsive-img" %>
+    <% end %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="active">
+          <%= link_to "MAKE YOUR OWN ARTSHOP",signup_path, class:"modal-trigger white-text" %></li>
+      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
+      <li><%= link_to "Sign in", "" , class:"modal-trigger" %></li>
+    </ul>
     </div>
-    <%= render 'layouts/footer' %>
+  </nav>
+  <!-- FIN NAV BAR -->
+</header>
+
+<main>
+ <%= yield %>
+</main>
+
+<!-- MODAL SCREEN -->
+  
+  <div id="signed" class="modal">
+    <div class="modal-content">
+      <p>Thank you for registering! <br> Sign in so you can start building your own artshop ;)</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+
+<div id="explain" class="modal">
+    <div class="modal-content" align="center">
+      A secure transaction means that the request will
+      be handled through the site. We will give you an ID so you can check on the progress
+      of your commission, and we'll withhold the payment to the artist until you've indicated
+      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%. 
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+<!-- MODAL SCREENS -->
+
+
+<footer>
+  <!-- BEGIN FOOTER -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+              <div class="col l4 offset-l2 s12">
+        <ul>
+                  <li><%= link_to "About Us", "about.html",class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "Privacy", "privacy.html", class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "Terms", "terms.html", class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "FAQ", "faq.html", class:"grey-text text-lighten-3" %></li>
+                </ul>
+              </div>
+        <div class="col l4 offset-l2 s12">
+        <ul>
+                 <li><%= link_to "Contact us","#contact", class:"grey-text text-lighten-3 modal-trigger" %></li>
+                 <li><%= link_to "Our Blog", "http://artlantis.tumblr.com", class:"grey-text text-lighten-3" %></li>
+                </ul>
+              </div>
+      </div>
+    </div>
+    <div class="footer-copyright center">© 2015 Artlantis</div>
+  </footer>
+  <!-- END FOOTER -->
+</footer>
+ <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'init', 'data-turbolinks-track' => true %>
+  <script>
+  $(document).ready(function() {
+  $('.modal-trigger').leanModal();
+  });
+  </script>
   </body>
 </html>
