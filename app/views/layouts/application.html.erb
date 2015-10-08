@@ -24,12 +24,33 @@
     <%= link_to root_path do %>
        <%= image_tag "logo.png", class: "responsive-img" %>
     <% end %>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li class="active">
-          <%= link_to "MAKE YOUR OWN ARTSHOP", signup_path, class:"white-text" %></li>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">         
+    
+    <% if @current_user.nil? %>
+      
+      <li class="active"><%= link_to "MAKE YOUR OWN ARTSHOP", signup_path, class:"white-text" %></li>
       <li><%= link_to "BROWSE", "browse" %></li>
       <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
       <li><%= link_to "Sign in", login_path  %></li>
+      
+    <% else %>
+      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
+      <li class="active"><%= link_to "#subscribe", class:"modal-trigger white-text" %></li>
+      
+      <li><%= link_to "#", { :class=>"dropdown-button", :"data-activates"=>'dropdown1', :"data-beloworigin"=>"true"} do %>
+            Welcome, <b><%= @user.username %></b>!
+          <% end %>
+      </li>
+      
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><%= link_to "My Shop" "sample_portfolio.html" %></li>
+        <li><%= link_to "Account" "#account" %></li>
+        <li><%= link_to "Pending Commissions", "#comm" %></li>
+        <li><%= link_to "Tutorial", :controller=>"static_pages", :action => "tutorial" %></li>
+      </ul>
+
+    <% end %>
     </ul>
     </div>
   </nav>
@@ -39,6 +60,30 @@
 <main>
  <%= yield %>
 </main>
+
+
+  <div id="sorry" class="modal modal-art">
+    <div class="modal-content">
+      <h6>We're so sorry! But we're working on this feature. We'll email you when it's available :D</h6>
+    </div>
+    <div class="modal-footer">
+      <%= link_to  "OK", "#", class:"modal-action modal-close waves-effect waves-green btn-flat" %>
+    </div>
+  </div>
+  
+  <div id="subscribe" class="modal modal-art">
+    <div class="modal-content">
+      <h4>Go <b>Pro</b> now!</h4>
+      <h6>What do you get out of it?</h6>
+      <i class="material-icons">shopping_cart</i>You'll have the <b>secure transaction</b> option free of charge!<br>     
+      <i class="material-icons">thumb_up</i>You get <b>more slots</b> for your shop.<br>
+      <i class="material-icons">grade</i>You get the star treatment in our frontpage. We'll make you our <b>featured</b> artist.<br>
+    </div>
+    <div class="modal-footer">
+      <%= link_to  "Not today!", "#", class:"modal-action modal-close waves-effect waves-green btn-flat" %>
+      <%= link_to  "I want to go Pro!", "#sorry", class:"modal-trigger modal-close waves-effect waves-green btn-flat" %>
+    </div>
+  </div>
 
 
 
