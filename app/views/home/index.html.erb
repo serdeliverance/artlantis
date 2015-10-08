@@ -15,28 +15,69 @@
 							   marketplace where you can safely reach out and attend to your customers.</p>
 					</div>
 					<div class="card-action right">
-						<a class="white-text" href="tour.html">Take a tour</a>
-						<a class="modal-trigger white-text" href="#signup">Get started!</a>
+						<%= link_to "Take a tour", :controller=>"static_pages", :action => "tour", class:"white-text" %>
+						<b><%= link_to "Get started!", signup_path , class:"white-text" %></b>
 					</div>
 				</div>
 			</div>
 			<div class="col s12 m2">
 				<div class="row">
 					<h6>Popular <b>commissions</b></h6>
-					<div class="col s6"><a href="#p1" class="modal-trigger"><img src="img/s3.jpg"  width=100 height=100 class="responsive-img"></a></div>
-					<div class="col s6"><a href="#p2" class="modal-trigger"><img src="img/s4.jpg"  width=100 height=100  class="responsive-img"></a></div>
+					<div class="col s6">
+						<%= link_to "#popcomm", { :class=>"modal-trigger" } do %>
+							<%= image_tag "popcomm/1.jpg", class:"responsive-img circle" %>
+						<% end %>
+					</div>
+					<div class="col s6">
+						<%= link_to "#popcomm", { :class=>"modal-trigger"} do %>
+							<%= image_tag "popcomm/2.jpg", class:"responsive-img circle" %>
+						<% end %>
+					</div>
 				</div>						
 				<div class="row">
-					<div class="col s6"><a href="#p3" class="modal-trigger"><img src="img/p1.jpg" width=100 height=100  class="responsive-img"></a></div>
-					<div class="col s6"><a href="#p4" class="modal-trigger"><img src="img/p2.jpg" width=100 height=100  class="responsive-img"></a></div>
+					<div class="col s6">
+						<%= link_to "#popcomm", {:class=>"modal-trigger"} do %>
+							<%= image_tag "popcomm/3.jpg", class:"responsive-img circle" %>
+						<% end %>
+					</div>
+					<div class="col s6">
+						<%= link_to "#popcomm", {:class=>"modal-trigger"} do %>
+							<%= image_tag "popcomm/4.jpg", class:"responsive-img circle" %>
+						<% end %>
+					</div>
 				</div>		
 				<div class="row">
 				<h6>Featured <b>Artists</b></h6>
-				<div class="col s6"><a href="sample_portfolio.html"><img src="img/s1.jpg"  class="responsive-img circle"></a></div>
-				<div class="col s6"><a href="sample_portfolio.html"><img src="img/s1.jpg"  class="responsive-img circle"></a></div>
+				<div class="col s6">
+					<%= link_to "#popcomm", {:class=>"modal-trigger"} do %>
+						<%= image_tag "0.png", class:"responsive-img circle" %>
+					<% end %>
+				</div>
+				<div class="col s6">
+					<%= link_to "#popcomm", {:class=>"modal-trigger"} do %>
+						<%= image_tag "0.png" , class:"responsive-img circle" %>
+					<% end %>
+				</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	</div>
 	
+
+<!-- MODAL SCREEN -->
+  <div id="popcomm" class="modal">
+    <div class="modal-content" align= "center">
+      <p>
+      	<h5 class="orange-text">Your art <b><i>could be here</i></b></h5>
+      			<%= image_tag "frame2.png", class:"responsive-img" %>
+      		<%= link_to "Sign up now!", signup_path %></i> and build your own art shop.<br>
+      		Your clients are <b>waiting</b> for you! 
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+
+<!-- MODAL SCREENS -->

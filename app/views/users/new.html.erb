@@ -1,3 +1,22 @@
-<div id="signup" class="modal"> 
-  <%= render  "form"%>
-</div>
+	<div class="container">
+	<div class="section">
+		<div class="row" >
+			<div class ="col s6" align="center">
+			<%= image_tag "logo_mascot.png", class:"responsive-img" %>
+			  <h4 class="grey-text">Sign up <b>now</b> to start selling your art!</h4>
+			</div>
+			<div class ="col s6" align="center">
+			  <%= render  "form"%>
+			</div>
+		</div>
+	</div>
+	</div>
+
+  <div id="signed" class="modal">
+    <div class="modal-content">
+      <p>Thank you for registering! <br> Sign in so you can start building your own artshop ;)</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>

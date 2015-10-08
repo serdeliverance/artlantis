@@ -26,10 +26,10 @@
     <% end %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li class="active">
-          <%= link_to "MAKE YOUR OWN ARTSHOP",signup_path, class:"modal-trigger white-text" %></li>
+          <%= link_to "MAKE YOUR OWN ARTSHOP", signup_path, class:"white-text" %></li>
       <li><%= link_to "BROWSE", "browse" %></li>
       <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
-      <li><%= link_to "Sign in", "" , class:"modal-trigger" %></li>
+      <li><%= link_to "Sign in", login_path  %></li>
     </ul>
     </div>
   </nav>
@@ -40,30 +40,6 @@
  <%= yield %>
 </main>
 
-<!-- MODAL SCREEN -->
-  
-  <div id="signed" class="modal">
-    <div class="modal-content">
-      <p>Thank you for registering! <br> Sign in so you can start building your own artshop ;)</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-
-
-<div id="explain" class="modal">
-    <div class="modal-content" align="center">
-      A secure transaction means that the request will
-      be handled through the site. We will give you an ID so you can check on the progress
-      of your commission, and we'll withhold the payment to the artist until you've indicated
-      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%. 
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </div>
-  </div>
-<!-- MODAL SCREENS -->
 
 
 <footer>

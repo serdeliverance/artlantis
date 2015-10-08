@@ -1857,6 +1857,19 @@ html input[type="button"], button, input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
+  box-shadow: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  color: #FF9100;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: orange;
   /* 3 */ }
 
 /**
@@ -5532,7 +5545,16 @@ small {
   padding: 20px;
   margin: 0.5rem 0 1rem 0;
   border-radius: 2px;
-  background-color: #fff; }
+  background-color: #fff; 
+}
+.card-panel-thin{
+  transition: box-shadow .25s;
+  padding-left: 5px;
+  padding: 0.1px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 5px;
+  background-color: #fff; 
+  }
 
 .card {
   position: relative;
@@ -5603,7 +5625,7 @@ small {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 20px; }
     .card .card-action a {
-      color: #ffab40;
+      color: #fff;
       margin-right: 20px;
       -webkit-transition: color .3s ease;
       -moz-transition: color .3s ease;

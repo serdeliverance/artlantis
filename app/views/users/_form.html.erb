@@ -1,5 +1,5 @@
 <%= form_for(@user) do |f| %>
-<div class="modal-content">
+<div class="row">
   <div class="input-field">
       <%= f.label :name %>
       <%= f.text_field :name, class:"validate" %>
@@ -8,14 +8,18 @@
       <%= f.label :email %>
       <%= f.email_field :email, class:"validate" %>
   </div>
-  <div class="input-field">
-      <%= f.label :sex %>
+</div>
+<div class="row">
+  <div class="input-field col s6">
+      <%= f.label :gender %>
       <%= f.text_field :sex %>
   </div>
-   <div class="input-field">
+   <div class="input-field col s6">
        <%= f.label :age %>
        <%= f.text_field :age %>
   </div>
+</div>
+<div class="row">
   <div class="input-field">
       <%= f.label :password %>
       <%= f.password_field :password, class:"validate" %>
@@ -24,13 +28,15 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class:"validate" %>
   </div>
-  <div class="input-field">
-      <%= f.label "Choose yout profile photo" %>
-      <%= f.file_field :avatar %>
+</div>
+<div class="row">
+  <div class="file-field input-field btn">
+      <span> Choose your profile image </span>
+      <%= f.file_field :avatar , type:"file"%> 
   </div>
 </div>
-<div class="modal-footer">
-  <%= f.submit "Sign me up!",class:"modal-trigger modal-close waves-effect waves-green btn-flat" %>
-  <%= link_to "Cancel", "#", class: "modal-action modal-close waves-effect waves-green btn-flat", data: {dismiss: "modal"} %>
+<div class="row">
+    <%= f.submit "Sign me up!" %>
+    <%= link_to "Cancel", "#", class:"waves-green btn-flat" %>
 </div>    
 <% end %>
