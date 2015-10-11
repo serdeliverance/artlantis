@@ -1,30 +1,42 @@
-<%= form_for @user do |f| %>
-<p>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-</p>
-<p>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-</p>
-<p>
-	<%= f.label :age %>
-	<%= f.file_field :age %>
-</p>
-
-<p>
-	<%= f.label :sex %>
-	<%= f.file_field :sex %>
-</p>
-
-<p>
-	<%= f.label :age %>
-	<%= f.file_field :age %>
-</p>
-
-<p>
-	<%= f.label :avatar %>
-	<%= f.file_field :avatar %>
-</p>
-<p><%= f.submit "Submit" %></p>
+<%= form_for(@user) do |f| %>
+<div class="row">
+  <div class="input-field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"validate" %>
+  </div>
+  <div class="input-field">
+      <%= f.label :email %>
+      <%= f.email_field :email, class:"validate" %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s6">
+      <%= f.label :gender %>
+      <%= f.text_field :sex %>
+  </div>
+   <div class="input-field col s6">
+       <%= f.label :age %>
+       <%= f.text_field :age %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field">
+      <%= f.label :password %>
+      <%= f.password_field :password, class:"validate" %>
+  </div>
+  <div class="input-field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class:"validate" %>
+  </div>
+</div>
+<div class="row">
+  <div class="file-field input-field btn">
+      <span> Choose your profile image </span>
+      <%= f.file_field :avatar , type:"file"%> 
+  </div>
+</div>
+<div class="row">
+    <%= f.submit "Sign me up!" %>
+    <%= link_to "Cancel", "#", class:"waves-green btn-flat" %>
+</div>    
 <% end %>

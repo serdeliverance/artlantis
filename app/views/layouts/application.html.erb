@@ -1,18 +1,125 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>ArtAtlantis</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-        <% flash.each do |message_type, message| %>
-          <div><%= message %></div>
-        <% end %>
-        <%= yield %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Artlantis MVP work in progress</title>
+  <%=favicon_link_tag 'favico.png', type: 'image/png'%>
+    
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag 'style.css', media: 'all',
+                                   'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'materialize.css', media: 'all',
+                                   'data-turbolinks-track' => true %>
+
+</head>
+
+<body onload="Materialize.fadeInImage('#fade-1')" class="white noselect">
+<header>
+  <!-- NAV BAR -->
+  <nav>
+    <div class="nav-wrapper">
+    <%= link_to root_path do %>
+       <%= image_tag "logo.png", class: "responsive-img" %>
+    <% end %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">         
+    
+    <% if @current_user.nil? %>
+      
+      <li class="active"><%= link_to "MAKE YOUR OWN ARTSHOP", signup_path, class:"white-text" %></li>
+      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
+      <li><%= link_to "Sign in", login_path  %></li>
+      
+    <% else %>
+      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
+      <li class="active"><%= link_to "#subscribe", class:"modal-trigger white-text" %></li>
+      
+      <li><%= link_to "#", { :class=>"dropdown-button", :"data-activates"=>'dropdown1', :"data-beloworigin"=>"true"} do %>
+            Welcome, <b><%= @user.username %></b>!
+          <% end %>
+      </li>
+      
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><%= link_to "My Shop" "sample_portfolio.html" %></li>
+        <li><%= link_to "Account" "#account" %></li>
+        <li><%= link_to "Pending Commissions", "#comm" %></li>
+        <li><%= link_to "Tutorial", :controller=>"static_pages", :action => "tutorial" %></li>
+      </ul>
+
+    <% end %>
+    </ul>
     </div>
-    <%= render 'layouts/footer' %>
+  </nav>
+  <!-- FIN NAV BAR -->
+</header>
+
+<main>
+ <%= yield %>
+</main>
+
+
+  <div id="sorry" class="modal modal-art">
+    <div class="modal-content">
+      <h6>We're so sorry! But we're working on this feature. We'll email you when it's available :D</h6>
+    </div>
+    <div class="modal-footer">
+      <%= link_to  "OK", "#", class:"modal-action modal-close waves-effect waves-green btn-flat" %>
+    </div>
+  </div>
+  
+  <div id="subscribe" class="modal modal-art">
+    <div class="modal-content">
+      <h4>Go <b>Pro</b> now!</h4>
+      <h6>What do you get out of it?</h6>
+      <i class="material-icons">shopping_cart</i>You'll have the <b>secure transaction</b> option free of charge!<br>     
+      <i class="material-icons">thumb_up</i>You get <b>more slots</b> for your shop.<br>
+      <i class="material-icons">grade</i>You get the star treatment in our frontpage. We'll make you our <b>featured</b> artist.<br>
+    </div>
+    <div class="modal-footer">
+      <%= link_to  "Not today!", "#", class:"modal-action modal-close waves-effect waves-green btn-flat" %>
+      <%= link_to  "I want to go Pro!", "#sorry", class:"modal-trigger modal-close waves-effect waves-green btn-flat" %>
+    </div>
+  </div>
+
+
+
+<footer>
+  <!-- BEGIN FOOTER -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+              <div class="col l4 offset-l2 s12">
+        <ul>
+                  <li><%= link_to "About Us", "about.html",class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "Privacy", "privacy.html", class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "Terms", "terms.html", class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "FAQ", "faq.html", class:"grey-text text-lighten-3" %></li>
+                </ul>
+              </div>
+        <div class="col l4 offset-l2 s12">
+        <ul>
+                 <li><%= link_to "Contact us","#contact", class:"grey-text text-lighten-3 modal-trigger" %></li>
+                 <li><%= link_to "Our Blog", "http://artlantis.tumblr.com", class:"grey-text text-lighten-3" %></li>
+                </ul>
+              </div>
+      </div>
+    </div>
+    <div class="footer-copyright center">© 2015 Artlantis</div>
+  </footer>
+  <!-- END FOOTER -->
+</footer>
+ <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'init', 'data-turbolinks-track' => true %>
+  <script>
+  $(document).ready(function() {
+  $('.modal-trigger').leanModal();
+  });
+  </script>
   </body>
 </html>

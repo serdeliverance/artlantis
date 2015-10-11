@@ -1,35 +1,22 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+	<div class="container">
+	<div class="section">
+		<div class="row" >
+			<div class ="col s6" align="center">
+			<%= image_tag "logo_mascot.png", class:"responsive-img" %>
+			  <h4 class="grey-text">Sign up <b>now</b> to start selling your art!</h4>
+			</div>
+			<div class ="col s6" align="center">
+			  <%= render  "form"%>
+			</div>
+		</div>
+	</div>
+	</div>
 
-<div>
-  <div>
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :sex %>
-      <%= f.text_field :sex %>
-
-      <%= f.label :age %>
-      <%= f.text_field :age %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label "Choose yout profile photo" %>
-      <%= f.file_field :avatar %>
-    
-      <%= f.submit "Create my account" %>
-      
-    <% end %>
+  <div id="signed" class="modal">
+    <div class="modal-content">
+      <p>Thank you for registering! <br> Sign in so you can start building your own artshop ;)</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
   </div>
-</div>
-

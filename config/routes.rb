@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'static_pages/tutorial'
+
+  get 'static_pages/tour'
+
+  get 'static_pages/about'
+
+  get 'static_pages/howitworks'
+
+  get 'static_pages/privacy'
+
+  get 'static_pages/terms'
+
+  get 'static_pages/faq'
+
   get 'sessions/new'
 
   get 'paints/index'
