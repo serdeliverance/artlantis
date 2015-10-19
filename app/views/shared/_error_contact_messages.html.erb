@@ -1,7 +1,7 @@
-<% if @user.errors.any? %>
+<% if @contact.errors.any? %>
   <div id="error_explanation">
     <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% @contact.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		#binding.pry
 	end
 
 	def new
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
 
 		# Confirms logged-in user
 		def logged_in_user
+			debugger
 			unless logged_in?
 				store_location
 				flash[:danger] = "Please log in"
@@ -67,7 +69,7 @@ class UsersController < ApplicationController
 		# Confirms the correct user.
 		def correct_user
 			@user = User.find(params[:id])
-			redirect_to(root_url) unless correct_user?(@user)
+			redirect_to(root_url) unless curret_user?(@user)
 		end
 
 		# Confirms an admin user.

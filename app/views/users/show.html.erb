@@ -6,9 +6,15 @@
   		<%= image_tag @user.avatar.url(:small) %>
         <%= @user.name %>
       </h1>
-      <h2>See my art gallery!!</h2>
-      <% @user.paints.each do |paint| %>
-      	<%= render paint %>
+      <% if @user.paints.count == 0 %>
+        <div>
+          <p>You hasn't uploaded any painting yet. Would you like to upload one?<%= link_to "Start here!", new_user_paint_url(@user) %></p>
+        </div>
+      <% else %>
+        <h2>See my art gallery!!</h2>
+          <% @user.paints.each do |paint| %>
+          	<%= render paint %>
+          <% end %>
       <% end %>
     </section>
   </aside>

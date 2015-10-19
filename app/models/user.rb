@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
 		:url  => "/assets/avatars/:id/:style/:basename.:extension",
 		:path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"	
 	validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/png']
+
+	GENDER_TYPES = ["None","Male", "Female"]
 end

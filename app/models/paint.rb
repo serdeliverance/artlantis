@@ -6,4 +6,6 @@ class Paint < ActiveRecord::Base
        	:path => ":rails_root/public/assets/paintings/:id/:style/:basename.:extension"
 
    	validates_attachment_content_type :paint, :content_type => ['image/jpeg', 'image/png']
+
+   	validates :price, :numericality => { only_decimal: true }
 end

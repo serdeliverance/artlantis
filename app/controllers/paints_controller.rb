@@ -28,6 +28,6 @@ class PaintsController < ApplicationController
 
   	private
 	  	def paint_params
-	  		params.require(:paint).permit(:title, :description, :paint)
+	  		params.require(:paint).permit(:title, :description, :paint, :price)
 	  	end
 end

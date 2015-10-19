@@ -1,0 +1,18 @@
+<!-- BEGIN CONTENT -->
+	<div class="container max-width">
+	<div class="section">
+		
+		<div class="row">
+			<div class ="col s12 m4">
+			<% @paints.each do |paint| %>
+			<a class="modal-trigger" href="#s1">
+				<div class="card small">
+					<div class="card-image"><%= image_tag paint.paint.url(:medium)%></div>
+					<div class="card-content"><b><%= paint.description %></b> by <i><%= paint.user.name %></i><br><%= paint.price %></div>
+				</div>
+			</a>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	</div>

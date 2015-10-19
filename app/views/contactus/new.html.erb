@@ -1,0 +1,25 @@
+<%= form_for @contact, url: contact_path(@contact), html: { method: :post } do |f| %>
+<%= render 'shared/error_contact_messages' %>
+<div class="row">
+  <div class="input-field">
+      <%= f.label "Full name: *" %>
+      <%= f.text_field :name, class:"validate" %>
+  </div>
+  <div class="input-field">
+      <%= f.label "Profession: *" %>
+      <%= f.text_field :profession, class:"validate" %>
+  </div>
+  <div class="input-field">
+      <%= f.label :email %>
+      <%= f.email_field :email, class:"validate" %>
+  </div>
+   <div class="input-field col s6">
+      <%= f.label :message %>
+      <%= f.text_field :message %>
+  </div>
+</div>
+<div class="row">
+    <%= f.submit "Submit"%>
+    <%= link_to "Cancel", root_path, class:"waves-green btn-flat" %>
+</div>    
+<% end %>
