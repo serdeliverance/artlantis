@@ -1,21 +1,130 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-  		<%= image_tag @user.avatar.url(:small) %>
-        <%= @user.name %>
-      </h1>
-      <% if @user.paints.count == 0 %>
-        <div>
-          <p>You hasn't uploaded any painting yet. Would you like to upload one?<%= link_to "Start here!", new_user_paint_url(@user) %></p>
-        </div>
-      <% else %>
-        <h2>See my art gallery!!</h2>
-          <% @user.paints.each do |paint| %>
-          	<%= render paint %>
-          <% end %>
-      <% end %>
-    </section>
-  </aside>
+<div class="container max-width">
+    <div class="section">
+    <div class="row">
+      <div class="col s12 valign-wrapper">
+                <div class="col s4 m2"><img src="img/s1.jpg" class="circle responsive-img"></div>
+                <div class="col s8 m10">
+                  <span class="grey-text">
+            <span class="green-text"><b><%= @user.name %></b></span>
+            <%= @user.description %>
+                  </span>
+                </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<div class="container max-width">
+<div class="section" id="fade-1">
+<div class="row">       
+ <% if @user.paints.count != 0 %>
+  <div class="row">
+    You're currently offering the following services: <br><br>
+    <% @user.paints.each do |paint| %>
+      <a href="#slot1" class="modal-trigger">
+        <div class="col s12 m6">
+        <div class="card small">
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= image_tag paint.paint %>
+          </div>
+          <div class="card-content">
+            <span class="card-title grey-text text-darken-3">
+              <%= paint.description %>
+            </span>
+            <span class ="green-text text-darken-2">$<%= paint.price %></span> / 
+            <span class ="green-text text-darken-2"><%= paint.week %> week</span> / 
+            <span class ="green-text text-darken-2"><%= paint.pieces %> pieces</span>    
+          </div>      
+        </div>      
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+  
+  <!-- END CONTENT -->
+    
+  <!-- BEGIN MODAL SCREENS -->
+  
+  <div id="p1" class="modal modal-art">
+    <div class="modal-content">
+      <center><img src="img/p1.jpg" class="responsive-artwork"><br></center>
+      <b>Traditional painting</b> by <i>BoticelliSandro122</i><br>$USD 200<br>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#commissionme" class="modal-trigger modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="p2" class="modal modal-art">
+    <div class="modal-content">
+      <center><img src="img/p2.jpg" class="responsive-artwork"><br></center>
+      <b>Traditional painting</b> by <i>BoticelliSandro122</i><br>$USD 200<br>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#commissionme" class="modal-trigger modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="p3" class="modal modal-art">
+    <div class="modal-content">
+      <center><img src="img/p3.jpg" class="responsive-artwork"><br></center>
+      <b>Traditional painting</b> by <i>BoticelliSandro122</i><br>$USD 200<br>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#commissionme" class="modal-trigger modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="p4" class="modal modal-art">
+    <div class="modal-content">
+      <center><img src="img/p4.jpg" class="responsive-artwork"><br></center>
+      <b>Traditional painting</b> by <i>BoticelliSandro122</i><br>$USD 200<br>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#commissionme" class="modal-trigger modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="commissionme" class="modal modal-art">
+    <div class="modal-content">
+      <div class="input-field"><input placeholder="Your name" id="Name" type="text" class="validate"></div>
+      <div class="input-field"><input placeholder="Your email address" id="email" type="text" class="validate"></div>
+      <div class="input-field">
+        <textarea id="text" class="materialize-textarea"></textarea>
+        <label for="textarea1">A description of your commission request. Don't leave out any details!</label>
+      </div>
+       <input type="checkbox" class="filled-in" id="securetrans" checked="checked" />
+      <label for="securetrans">Make this a <b>secure transaction</b></label> 
+      <a class="modal-trigger" href="#explain">What's this?</a>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="explain" class="modal">
+    <div class="modal-content" align="center">
+      A secure transaction means that the request will
+      be handled through the site. We will give you an ID so you can check on the progress
+      of your commission, and we'll withhold the payment to the artist until you've indicated
+      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%. 
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+  

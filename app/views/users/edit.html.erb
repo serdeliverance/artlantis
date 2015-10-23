@@ -1,3 +1,4 @@
+<!--
 <% provide(:title, "Edit user") %>
 <h1>Update your profile</h1>
 
@@ -27,3 +28,247 @@
     </div>
   </div>
 </div>
+-->
+    <div class="container max-width">
+    <div class="section">
+    <div class="row">
+      <div class="col s6 m3"><%= image_tag @user.avatar.url(:small), class:"responsive-img" %></div>
+            <div class="col s6 m9"><h3>Welcome, <b><%= @user.name %></b>!</h3></div>
+             <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+          <li class="tab col s4"><a href="#shop">My Shop</a></li>
+          <li class="tab col s4"><a class="active" href="#account">Account</a></li>
+          <li class="tab col s4"><a href="#comm">Pending Commissions</a></li>
+          </ul>
+        </div>
+<div id="shop" class="col s12">
+          <ul class="collapsible" data-collapsible="accordion">
+            <li>
+
+              <!-- EDITAR DESCRIPCION -->
+              <div class="collapsible-header">Edit your description</div>
+              <div class="collapsible-body" align="right">
+                <label for="textarea1">Describe who you are and what you do!</label>
+                <textarea id="text" class="materialize-textarea"></textarea>
+                <a href="#!" class="waves-effect waves-green btn-flat">Save</a>
+              </div>
+              <!-- EDITAR DESCRIPCION -->
+
+
+            </li>
+  <li>
+    <div class="collapsible-header">Manage your commission slots</div>
+      <div class="collapsible-body" align="center">
+        <!-- DATOS DE COMISIONES SUBIDAS -->
+        <% if @user.paints.count != 0 %>
+        <div class="row">
+          You're currently offering the following services: <br><br>
+          <% @user.paints.each do |paint| %>
+            <a href="#slot1" class="modal-trigger">
+              <div class="col s12 m6">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <%= image_tag paint.paint %>
+                </div>
+                <div class="card-content">
+                  <span class="card-title grey-text text-darken-3">
+                    <%= paint.description %>
+                  </span>
+                  <span class ="green-text text-darken-2">$<%= paint.price %></span> / 
+                  <span class ="green-text text-darken-2"><%= paint.week %> week</span> / 
+                  <span class ="green-text text-darken-2"><%= paint.pieces %> pieces</span>    
+                </div>      
+              </div>      
+              </div>
+            </a>
+          <% end %>
+        </div>
+        <% end %>
+        <div class="row">
+          Upload a new commission: 
+          <!-- FORMULARIO SUBIDA DE COMISIONES -->
+
+    <%= form_for([@user, @user.paints.build]) do |f| %>
+      <div class="input-field col s12">
+        <%= f.text_field :title%>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.text_field :price%>
+        </div>
+        <div class="input-field col s4">
+            <%= f.text_field :pieces%>
+        </div>
+        <div class="input-field col s4">
+          <%= f.text_field :week%>
+        </div>
+      </div>
+      <%= f.text_area :description%>
+      <div class="file-field input-field btn">
+        <span> Choose your sample image </span>
+        <%= f.file_field :paint , type:"file"%> 
+      </div>
+      <div class="row" align="right">
+        <%= f.submit "Save" %>
+        <%= link_to "Cancel" %>
+      </div>
+    <% end %>
+
+        <!-- FORMULARIO SUBIDA DE COMISIONES -->
+
+        </div>
+      </div>
+  </li>
+  </ul>
+</div>
+<div id="account" class="col s12">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">Change your password</div>
+      <div class="collapsible-body" align="right">
+        <!-- CAMBIAR PASS -->
+        <%= form_for(@user) do |f| %>
+          <div class="input-field">
+            <%= f.password_field :password %>
+          </div>
+          <div class="input-field">
+            <%= f.password_field :password_confirmation %>
+          </div>
+            <%= f.submit "Change your password" %>
+        <% end %>
+        <!-- CAMBIAR PASS -->
+      </div>
+
+    </li>
+    <!-- CAMBIAR MAIL -->
+    <li>
+      <div class="collapsible-header">Change your email</div>
+      <div class="collapsible-body" align="right">
+        <center>Your current email is:<b> <%= @user.email %> </b></center>
+        <%= form_for(@user) do |f| %>
+          <div class="input-field">
+             <%= f.email_field :email%>
+          </div>
+          <%= f.submit "Save"%>
+        <% end %>
+      </div>
+    </li>
+    <!-- CAMBIAR MAIL -->
+    <!--ESTATICO-->        
+    <li>
+      <div class="collapsible-header">Billing info</div>
+      <div class="collapsible-body"  align="right">
+          <center>We're currently transferring your payments to the Paypal account associated to: <b>  <%= @user.email %> </b></center>
+          <div class="input-field"><input disabled placeholder="Not available for now!" id="newmail" type="text" class="validate"></div>
+          <a href="#!" disabled class="waves-effect waves-green btn-flat">Save</a>
+      </div>
+    </li>
+    <!--ESTATICO-->         
+    
+    <!-- CAMBIAR AVATAR -->
+    <li>
+      <div class="collapsible-header">Change your icon</div>
+      <div class="collapsible-body"  align="right">
+        <%= form_for(@user) do |f| %>
+           <div class="file-field input-field btn">
+            <span> Choose your profile image </span>
+            <%= f.file_field :avatar , type:"file"%> 
+          </div>
+          <%= f.submit "Upload"%>
+        <% end %>
+      </div>
+     </li>
+  </ul>
+  </div>
+  <!--ESTATICO-->  
+  <div id="comm" class="col s12"><br><br>Not available yet, sorry! We're working on it!</div>
+  <!--ESTATICO-->  
+  </div>
+  </div>
+    </div>
+    </div>
+
+  <!-- END CONTENT -->
+    
+  <!-- BEGIN MODAL SCREENS -->
+  <div id="sorry" class="modal modal-art">
+    <div class="modal-content">
+      <h6>We're so sorry! But we're working on this feature. We'll email you when it's available :D</h6>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  
+  <div id="subscribe" class="modal modal-art">
+    <div class="modal-content">
+      <h4>Go <b>Pro</b> now!</h4>
+      <h6>What do you get out of it?</h6>
+      <i class="material-icons">shopping_cart</i>You'll have the <b>secure transaction</b> option free of charge!<br>     
+      <i class="material-icons">thumb_up</i>You get <b>more slots</b> for your shop.<br>
+      <i class="material-icons">grade</i>You get the star treatment in our frontpage. We'll make you our <b>featured</b> artist.<br>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Not today!</a>
+      <a href="#sorry" class="modal-trigger modal-close waves-effect waves-green btn-flat">I want to go pro!</a>
+    </div>
+  </div>
+  
+  
+  <div id="slot1" class="modal modal-art">
+    <div class="modal-content">
+      <form action="#">
+      <div class="row">
+        <div class="col s4">
+          <img class="responsive-img" src="img/p1.jpg">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Change file</span>
+              <input type="file">
+            </div>
+          </div>
+        </div>
+        <div class="col s8">
+          <input placeholder="Colored painting" id="title" type="text" class="validate">
+          <input placeholder="75" id="price" type="text" class="validate">
+          <input placeholder="3 pieces" id="slots" type="text" class="validate">
+          <input placeholder="1 week" id="time" type="text" class="validate">
+          <textarea id="desc" class="materialize-textarea" placeholder="Describe what you're offering. Don't leave out any details!"></textarea>      
+        </div>        
+      </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>
+  <div id="slot2" class="modal modal-art">
+    <div class="modal-content">
+      <form action="#">
+      <div class="row">
+        <div class="col s4">
+          <img class="responsive-img" src="img/p2.jpg">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Change file</span>
+              <input type="file">
+            </div>
+          </div>
+        </div>
+        <div class="col s8">
+          <input placeholder="Colored painting" id="title" type="text" class="validate">
+          <input placeholder="75" id="price" type="text" class="validate">
+          <input placeholder="3 pieces" id="slots" type="text" class="validate">
+          <input placeholder="1 week" id="time" type="text" class="validate">
+          <textarea id="desc" class="materialize-textarea" placeholder="Describe what you're offering. Don't leave out any details!"></textarea>      
+        </div>        
+      </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-trigger modal-close waves-effect waves-green btn-flat">Save</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+    </div>
+  </div>

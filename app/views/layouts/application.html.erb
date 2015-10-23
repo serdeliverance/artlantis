@@ -46,11 +46,9 @@
             <% end %>
           <% end %>
       </li>
-      
       <ul id='dropdown1' class='dropdown-content'>
-        <li><%= link_to "My Shop" "sample_portfolio.html" %></li>
-        <li><%= link_to "Account" "#account" %></li>
-        <li><%= link_to "Pending Commissions", "#comm" %></li>
+        <li><%= link_to "My Shop", controller: "users", action:"show", id: @current_user.id %></li>
+        <li><%= link_to "Account", controller: "users", action:"edit", id: @current_user.id %></li>
         <li><%= link_to "Tutorial", :controller=>"static_pages", :action => "tutorial" %></li>
         <li><%= link_to "Log out", logout_path %></li>
       </ul>
