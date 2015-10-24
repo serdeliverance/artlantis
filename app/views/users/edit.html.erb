@@ -32,7 +32,11 @@
     <div class="container max-width">
     <div class="section">
     <div class="row">
+<<<<<<< HEAD
       <div class="col s6 m3"><%= image_tag @user.avatar.url(:small), class:"responsive-img" %></div>
+=======
+      <div class="col s6 m3"><%= image_tag @user.avatar.url(:small), class:"circle responsive-img", style:"width:80px; height:80px;" %></div>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
             <div class="col s6 m9"><h3>Welcome, <b><%= @user.name %></b>!</h3></div>
              <div class="row">
         <div class="col s12">
@@ -62,6 +66,7 @@
       <div class="collapsible-body" align="center">
         <!-- DATOS DE COMISIONES SUBIDAS -->
         <% if @user.paints.count != 0 %>
+<<<<<<< HEAD
         <div class="row">
           You're currently offering the following services: <br><br>
           <% @user.paints.each do |paint| %>
@@ -78,12 +83,54 @@
                   <span class ="green-text text-darken-2">$<%= paint.price %></span> / 
                   <span class ="green-text text-darken-2"><%= paint.week %> week</span> / 
                   <span class ="green-text text-darken-2"><%= paint.pieces %> pieces</span>    
+=======
+          You're currently offering the following services: <br><br>
+          <% @user.paints.each_slice(2) do |paint1, paint2| %>
+          <div class="row">
+            <a href="#<% paint1.id %>" class="modal-trigger">
+              <div class="col s12 m6">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <%= image_tag paint1.paint %>
+                </div>
+                <div class="card-content">
+                  <span class="card-title grey-text text-darken-3">
+                    <%= paint1.title %>
+                  </span><br>
+                  <span class ="green-text text-darken-2">$<%= paint1.price %></span> / 
+                  <span class ="green-text text-darken-2"><%= paint1.week %> week</span> / 
+                  <span class ="green-text text-darken-2"><%= paint1.pieces %> pieces</span>    
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
                 </div>      
               </div>      
               </div>
             </a>
+<<<<<<< HEAD
           <% end %>
         </div>
+=======
+            <% if !paint2.nil? %>
+            <a href="#<% paint2.id %>"  class="modal-trigger">
+              <div class="col s12 m6">
+              <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <%= image_tag paint2.paint %>
+                </div>
+                <div class="card-content">
+                  <span class="card-title grey-text text-darken-3">
+                    <%= paint2.title %>
+                  </span><br>
+                  <span class ="green-text text-darken-2">$<%= paint2.price %></span> / 
+                  <span class ="green-text text-darken-2"><%= paint2.week %> week</span> / 
+                  <span class ="green-text text-darken-2"><%= paint2.pieces %> pieces</span>    
+                </div>      
+              </div>      
+              </div>
+            </a>
+            <% end %>
+        </div>
+          <% end %>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
         <% end %>
         <div class="row">
           Upload a new commission: 
@@ -91,6 +138,7 @@
 
     <%= form_for([@user, @user.paints.build]) do |f| %>
       <div class="input-field col s12">
+<<<<<<< HEAD
         <%= f.text_field :title%>
       </div>
       <div class="row">
@@ -105,13 +153,33 @@
         </div>
       </div>
       <%= f.text_area :description%>
+=======
+        <%= f.text_field(:title, placeholder:'Title of the commission')%>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <%= f.text_field(:price, placeholder:'Price')%>
+        </div>
+        <div class="input-field col s4">
+            <%= f.text_field(:pieces, placeholder:'# Slots') %>
+        </div>
+        <div class="input-field col s4">
+          <%= f.text_field(:week, placeholder:'Time to complete') %>
+        </div>
+      </div>
+      <%= f.text_area(:description, placeholder:"Describe what you're offering. Don't leave out any details!", class:"materialize-textarea")%>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
       <div class="file-field input-field btn">
         <span> Choose your sample image </span>
         <%= f.file_field :paint , type:"file"%> 
       </div>
       <div class="row" align="right">
         <%= f.submit "Save" %>
+<<<<<<< HEAD
         <%= link_to "Cancel" %>
+=======
+       <%= button_tag "Cancel", type: :reset %>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
       </div>
     <% end %>
 
@@ -130,10 +198,17 @@
         <!-- CAMBIAR PASS -->
         <%= form_for(@user) do |f| %>
           <div class="input-field">
+<<<<<<< HEAD
             <%= f.password_field :password %>
           </div>
           <div class="input-field">
             <%= f.password_field :password_confirmation %>
+=======
+            <%= f.password_field(:password, placeholder:'New password') %>
+          </div>
+          <div class="input-field">
+            <%= f.password_field(:password_confirmation, placeholder:'Repeat new password') %>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
           </div>
             <%= f.submit "Change your password" %>
         <% end %>
@@ -145,10 +220,17 @@
     <li>
       <div class="collapsible-header">Change your email</div>
       <div class="collapsible-body" align="right">
+<<<<<<< HEAD
         <center>Your current email is:<b> <%= @user.email %> </b></center>
         <%= form_for(@user) do |f| %>
           <div class="input-field">
              <%= f.email_field :email%>
+=======
+        <center>Your current email is: <span class="orange-text"><%= @user.email %> </span></center>
+        <%= form_for(@user) do |f| %>
+          <div class="input-field grey-text">
+             <%= f.email_field(:email, placeholder:'New Email') %>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
           </div>
           <%= f.submit "Save"%>
         <% end %>
@@ -158,10 +240,17 @@
     <!--ESTATICO-->        
     <li>
       <div class="collapsible-header">Billing info</div>
+<<<<<<< HEAD
       <div class="collapsible-body"  align="right">
           <center>We're currently transferring your payments to the Paypal account associated to: <b>  <%= @user.email %> </b></center>
           <div class="input-field"><input disabled placeholder="Not available for now!" id="newmail" type="text" class="validate"></div>
           <a href="#!" disabled class="waves-effect waves-green btn-flat">Save</a>
+=======
+      <div class="collapsible-body grey-text"  align="right">
+          <center>We're currently transferring your payments to the Paypal account associated to: <b>  <%= @user.email %> </b></center>
+          <div class="input-field"><input disabled placeholder="Not available for now!" id="newmail" type="text" class="validate"></div>
+          <a disabled class="btn-flat grey-text">Save</a>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
       </div>
     </li>
     <!--ESTATICO-->         
@@ -182,7 +271,11 @@
   </ul>
   </div>
   <!--ESTATICO-->  
+<<<<<<< HEAD
   <div id="comm" class="col s12"><br><br>Not available yet, sorry! We're working on it!</div>
+=======
+  <div id="comm" class="col s12 grey-text"><br><br>Not available yet, sorry! We're working on it!</div>
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
   <!--ESTATICO-->  
   </div>
   </div>
@@ -201,6 +294,7 @@
     </div>
   </div>
   
+<<<<<<< HEAD
   <div id="subscribe" class="modal modal-art">
     <div class="modal-content">
       <h4>Go <b>Pro</b> now!</h4>
@@ -226,10 +320,25 @@
             <div class="btn">
               <span>Change file</span>
               <input type="file">
+=======
+  <% if @user.paints.count != 0 %>
+  <% @user.paints.each do |paint| %>
+  <div id="slot1" class="modal modal-art">
+      <%= form_for(@user.paint) do |f| %>
+    <div class="modal-content">
+      <div class="row">
+        <div class="col s4">
+          <%= image_tag paint.paint %>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Change file</span>
+              <%= f.file_field :paint , type:"file"%> 
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
             </div>
           </div>
         </div>
         <div class="col s8">
+<<<<<<< HEAD
           <input placeholder="Colored painting" id="title" type="text" class="validate">
           <input placeholder="75" id="price" type="text" class="validate">
           <input placeholder="3 pieces" id="slots" type="text" class="validate">
@@ -272,3 +381,22 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
     </div>
   </div>
+=======
+          <%= f.text_field(:title)%>
+          <%= f.text_field(:price)%>         
+          <%= f.text_field(:pieces) %>
+          <%= f.text_field(:week) %>
+          <%= f.text_area(:description, class:"materialize-textarea")%>     
+        </div>        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit "Save" %>
+      <%= button_tag "Cancel", type: :reset %>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+<% end %>
+   
+>>>>>>> 7e1165170928296e8fe57adfe0356852c797f1c6
