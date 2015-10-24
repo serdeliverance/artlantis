@@ -26,28 +26,31 @@
     <% end %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">         
     
-    <% if @current_user.nil? %>
+    <% if !logged_in? %>
       
       <li class="active"><%= link_to "MAKE YOUR OWN ARTSHOP", signup_path, class:"white-text" %></li>
-      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "BROWSE", :controller => "browse", :action => "index" %></li>
       <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
       <li><%= link_to "Sign in", login_path  %></li>
       
     <% else %>
-      <li><%= link_to "BROWSE", "browse" %></li>
+      <li><%= link_to "BROWSE", :controller => "browse", :action => "index" %></li>
       <li><%= link_to "HOW IT WORKS", :controller=>"static_pages", :action => "howitworks" %></li>
-      <li class="active"><%= link_to "#subscribe", class:"modal-trigger white-text" %></li>
+      <li class="active"><%= link_to "GO PRO", "#subscribe" ,class:"modal-trigger white-text" %></li>
       
-      <li><%= link_to "#", { :class=>"dropdown-button", :"data-activates"=>'dropdown1', :"data-beloworigin"=>"true"} do %>
-            Welcome, <b><%= @user.username %></b>!
+      <li><%= link_to "#", { :class=>"dropdown-button", :"data-activates"=>'dropdown1', :"data-beloworigin"=>"true"} do%>
+            <% if !@user.nil? %>
+              Welcome, <b><%= @user.name %></b>!
+            <% else %>
+              Welcome, <b>my friend</b>!
+            <% end %>
           <% end %>
       </li>
-      
       <ul id='dropdown1' class='dropdown-content'>
-        <li><%= link_to "My Shop" "sample_portfolio.html" %></li>
-        <li><%= link_to "Account" "#account" %></li>
-        <li><%= link_to "Pending Commissions", "#comm" %></li>
+        <li><%= link_to "My Shop", controller: "users", action:"show", id: @current_user.id %></li>
+        <li><%= link_to "Account", controller: "users", action:"edit", id: @current_user.id %></li>
         <li><%= link_to "Tutorial", :controller=>"static_pages", :action => "tutorial" %></li>
+        <li><%= link_to "Log out", logout_path %></li>
       </ul>
 
     <% end %>
@@ -59,6 +62,7 @@
 
 <main>
  <%= yield %>
+ <%= debug(params) if Rails.env.development? %>
 </main>
 
 
@@ -94,16 +98,24 @@
       <div class="row">
               <div class="col l4 offset-l2 s12">
         <ul>
-                  <li><%= link_to "About Us", "about.html",class:"grey-text text-lighten-3" %></li>
-                  <li><%= link_to "Privacy", "privacy.html", class:"grey-text text-lighten-3" %></li>
-                  <li><%= link_to "Terms", "terms.html", class:"grey-text text-lighten-3" %></li>
-                  <li><%= link_to "FAQ", "faq.html", class:"grey-text text-lighten-3" %></li>
+                  <li><%= link_to "About Us", 
+                      {:controller=>"static_pages", :action => "about"},
+                      {:class=>"grey-text text-lighten-3"} %></li>
+                  <li><%= link_to "Privacy",
+                      {:controller=>"static_pages", :action => "privacy"}, 
+                      {:class=>"grey-text text-lighten-3"} %></li>
+                  <li><%= link_to "Terms", 
+                      {:controller=>"static_pages", :action => "terms"}, 
+                      {:class=>"grey-text text-lighten-3"} %></li>
+                  <li><%= link_to "FAQ", 
+                      {:controller=>"static_pages", :action => "faq"}, 
+                      {:class=>"grey-text text-lighten-3"} %></li>
                 </ul>
               </div>
         <div class="col l4 offset-l2 s12">
         <ul>
-                 <li><%= link_to "Contact us","#contact", class:"grey-text text-lighten-3 modal-trigger" %></li>
-                 <li><%= link_to "Our Blog", "http://artlantis.tumblr.com", class:"grey-text text-lighten-3" %></li>
+                 <li><%= link_to "Contact us", contactus_new_path, class:"grey-text text-lighten-3" %></li>
+                 <li><%= link_to "Our Blog", "http://artlantis-art.tumblr.com", class:"grey-text text-lighten-3" %></li>
                 </ul>
               </div>
       </div>

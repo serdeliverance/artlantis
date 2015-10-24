@@ -1,69 +1,70 @@
-<div class="container max-width">
-    <div class="section">
-    <div class="row">
-      <div class="col s12 valign-wrapper">
-                <div class="col s4 m2"><%=image_tag @user.avatar, class:"circle responsive-img", style:"width:80px; height:80px;" %></div>
-                <div class="col s8 m10">
-                  <span class="grey-text">
-            <span class="green-text"><b><%= @user.name %></b></span>
-            <% if !@user.description.nil? %> 
-              <%= @user.description %>
-            <% else %>
-              is an amazing artist who offers their work to the world.</span>
-            <% end %>
-            </span>
-                </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- BEGIN CONTENT -->
+	<div class="container max-width">
+	<div class="section">
+		<% @paints.each_slice(3) do |paint1,paint2,paint3| %>
+		<div class="row">
+			<div class ="col s4">
+			<a class="modal-trigger green-text" href="#<%= paint1.id%>">
+				<div class="card small">
+					<div class="card-image"><%= image_tag paint1.paint.url(:medium)%></div>
+					<div class="card-content">
+						<b><%= paint1.title %></b> 
+						<span class="grey-text">
+							by <i><%= paint1.user.name %></i> - <b>USD$ 
+								<%= number_with_precision(paint1.price, :precision=>2) %></b>
+						</span>
+						</div>
+				</div>
+			</a>
+			</div>
+			<% if !paint2.nil? %>
+			<div class ="col s4">
+			<a class="modal-trigger green-text" href="#<%= paint2.id%>">
+				<div class="card small">
+					<div class="card-image"><%= image_tag paint2.paint.url(:medium)%></div>
+					<div class="card-content">
+					<b><%= paint2.title %></b> 
+					<span class="grey-text">
+						by <i><%= paint2.user.name %></i> - <b>USD$ 
+							<%= number_with_precision(paint2.price, :precision=>2) %></b>
+					</span>
+					</div>
+				</div>
+			</a>
+			</div>
+			<% end %>
+			<% if !paint3.nil? %>
+			<div class ="col s4">
+			<a class="modal-trigger green-text" href="#<%= paint3.id%>">
+				<div class="card small">
+					<div class="card-image"><%= image_tag paint3.paint.url(:medium)%></div>
+					<div class="card-content">
+					<b><%= paint3.title %></b> 
+					<span class="grey-text">
+						by <i><%= paint3.user.name %></i> - <b>USD$ 
+							<%= number_with_precision(paint3.price, :precision=>2) %></b>
+					</span>
+					</div>
+				</div>
+			</a>
+			</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+	</div>
 
 
-<div class="container max-width">
-<div class="section" id="fade-1">
-<div class="row">       
- <% if @user.paints.count != 0 %>
-  <div class="row">
-    <% @user.paints.each do |paint| %>
-      <a href="#<%= paint.id %>" class="modal-trigger">
-        <div class="col s12 m6">
-        <div class="card small">
-          <div class="card-image waves-effect waves-block waves-light">
-            <%= image_tag paint.paint.url(:medium) %>
-          </div>
-          <div class="card-content">
-            <span class="card-title grey-text text-darken-3">
-              <%= paint.title %>
-            </span><br>
-            <span class ="green-text text-darken-2">$<%= paint.price %></span> / 
-            <span class ="green-text text-darken-2"><%= paint.week %> week</span> / 
-            <span class ="green-text text-darken-2"><%= paint.pieces %> pieces</span>    
-          </div>      
-        </div>      
-        </div>
-      </a>
-    <% end %>
-  </div>
-<% else %>
-<div align="center"><span class="grey-text">
-  <b><%= @user.name %></b> hasn't uploaded anything yet. Come back in the future!
-  </span>
-</div>
-<% end %>
-</div>
-</div>
-</div>
 
-
-<% if @user.paints.count != 0 %>
-  <% @user.paints.each do |paint| %>
+<% if @paints.count != 0 %>
+  <% @paints.each do |paint| %>
     <div id="<%= paint.id %>" class="modal modal-art">
       <div class="modal-content">
           <center>
              <%= image_tag paint.paint, class:"responsive-artwork" %>
             <br>
           </center><div class="row">
-          <b><%= paint.title %></b> by <i><%= @user.name %></i><br>$USD <%= paint.price %><br>
+          <b><%= paint.title %></b> by <i><%= paint.user.name %></i><br>$USD <%= paint.price %><br>
             <%= paint.description %>
         </div>
         </div>

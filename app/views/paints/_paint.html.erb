@@ -1,6 +1,48 @@
-<p>
-  <%= image_tag paint.paint.url(:medium) %>
-</p>
-<p>
-	<%= paint.description %>
-</p>
+<div id="#paint" class="modal modal-art">
+    <div class="modal-content">
+      <center>
+      	 <%= image_tag paint.paint.url(:medium), class:"responsive-artwork" %>
+      	<br>
+      </center>
+      <b><%= paint.title %></b> by <i>@user.name</i><br>$USD <%= paint.price %><br>
+      <%= paint.description %>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#commissionme" class="modal-trigger modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+
+
+
+  
+  <div id="commissionme" class="modal modal-art">
+    <div class="modal-content">
+      <div class="input-field"><input placeholder="Your name" id="Name" type="text" class="validate"></div>
+      <div class="input-field"><input placeholder="Your email address" id="email" type="text" class="validate"></div>
+      <div class="input-field">
+        <textarea id="text" class="materialize-textarea"></textarea>
+        <label for="textarea1">A description of your commission request. Don't leave out any details!</label>
+      </div>
+       <input type="checkbox" class="filled-in" id="securetrans" checked="checked" />
+      <label for="securetrans">Make this a <b>secure transaction</b></label> 
+      <a class="modal-trigger" href="#explain">What's this?</a>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Commission</a>
+    </div>
+  </div>
+  
+  <div id="explain" class="modal">
+    <div class="modal-content" align="center">
+      A secure transaction means that the request will
+      be handled through the site. We will give you an ID so you can check on the progress
+      of your commission, and we'll withhold the payment to the artist until you've indicated
+      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%. 
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+  

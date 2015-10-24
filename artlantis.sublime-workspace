@@ -1,0 +1,316 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mong",
+				"mongomssg"
+			],
+			[
+				"datos",
+				"datosMOD"
+			],
+			[
+				"ID",
+				"IDGATEWAY"
+			],
+			[
+				"son",
+				"son_datos_cnx_smart_plug"
+			],
+			[
+				"nue",
+				"nuevaCNX"
+			],
+			[
+				"sens",
+				"sensores"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"left",
+				"margin-left"
+			],
+			[
+				"image",
+				"image_tag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/agustina/in_hubmod/log"
+	],
+	"file_history":
+	[
+		"/home/agustina/Desktop/in_hubmod/mongospeaker.js",
+		"/home/agustina/in_hubmod/Test_modules/test_actuador.js",
+		"/home/agustina/in_hubmod/dataserver.js",
+		"/home/agustina/in_hubmod/log/20151024_DATASERVER.log",
+		"/home/agustina/in_hubmod/log/20151024_MONGOSPEAKER.log",
+		"/home/agustina/artlantis_v2/artlantis/app/controllers/users_controller.rb",
+		"/home/agustina/in_hubmod/log/20151023_MONGOSPEAKER.log",
+		"/home/agustina/in_hubmod/log/20151023_DATASERVER.log",
+		"/home/agustina/Desktop/in_hubmod/dataserver.js",
+		"/home/agustina/artlantis_v2/artlantis/app/views/paints/index.html.erb",
+		"/home/agustina/artlantis_v2/artlantis/app/views/layouts/application.html.erb",
+		"/home/agustina/artlantis_v2/artlantis/app/views/users/show.html.erb",
+		"/home/agustina/artlantis_v2/artlantis/app/controllers/paints_controller.rb",
+		"/home/agustina/artlantis/app/views/paints/create.html.erb",
+		"/home/agustina/artlantis/app/views/paints/index.html.erb",
+		"/home/agustina/artlantis/app/views/users/show.html.erb",
+		"/home/agustina/artlantis/app/views/layouts/application.html.erb",
+		"/home/agustina/artlantis/app/controllers/users_controller.rb",
+		"/home/agustina/artlantis/app/controllers/paints_controller.rb",
+		"/home/agustina/artlantis/app/views/users/index.html.erb",
+		"/home/agustina/artlantis/config/routes.rb",
+		"/home/agustina/artlantis/app/controllers/application_controller.rb",
+		"/home/agustina/artlantis/app/views/index_signedin.html",
+		"/home/agustina/artlantis/app/views/browse.html",
+		"/home/agustina/artlantis/app/views/users/_form.html.erb",
+		"/home/agustina/artlantis/app/views/home/index.html.erb",
+		"/home/agustina/artlantis/app/views/sample_portfolio.html",
+		"/home/agustina/artlantis/app/views/users/new.html.erb",
+		"/home/agustina/artlantis/app/views/users/_user.html.erb",
+		"/home/agustina/artlantis/app/views/layouts/modal_signed.html.erb",
+		"/home/agustina/Desktop/in_hubmod/crear_ejecutable.sh",
+		"/home/agustina/Desktop/prueba.py",
+		"/home/agustina/Desktop/Modulo de Inteligencia Artificial/IAMOD_test.txt",
+		"/home/agustina/in_hubmod/logger.js",
+		"/home/agustina/in_hubmod/mongospeaker.js",
+		"/home/agustina/artlantis/app/assets/stylesheets/materialize.css",
+		"/home/agustina/artlantis/app/views/static_pages/tutorial.html.erb",
+		"/home/agustina/artlantis/app/views/tutorial.html",
+		"/home/agustina/artlantis/app/views/static_pages/privacy.html.erb",
+		"/home/agustina/artlantis/app/views/static_pages/terms.html.erb",
+		"/home/agustina/artlantis/app/views/static_pages/tour.html.erb",
+		"/home/agustina/artlantis/app/views/static_pages/faq.html.erb",
+		"/home/agustina/artlantis/app/views/static_pages/about.html.erb",
+		"/home/agustina/artlantis/app/assets/stylesheets/style.css",
+		"/home/agustina/artlantis/app/views/sessions/new.html.erb",
+		"/home/agustina/artlantis/app/assets/javascripts/application.js",
+		"/home/agustina/artlantis/app/views/layouts/_modal.html.erb",
+		"/home/agustina/artlantis/app/assets/javascripts/home.coffee",
+		"/home/agustina/artlantis/app/views/users/new.js.erb",
+		"/home/agustina/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/agustina/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/agustina/artlantis/app/views/index.html",
+		"/home/agustina/artlantis/app/views/users/_save.js.erb",
+		"/home/agustina/artlantis/app/views/static_pages/howitworks.html.erb",
+		"/home/agustina/artlantis/app/views/tour.html",
+		"/home/agustina/artlantis/app/controllers/static_pages_controller.rb",
+		"/home/agustina/artlantis/app/views/howitworks.html",
+		"/home/agustina/artlantis/config/initializers/assets.rb",
+		"/home/agustina/artlantis/app/controllers/home_controller.rb",
+		"/home/agustina/artlantis/app/controllers/sessions_controller.rb",
+		"/home/agustina/artlantis/app/assets/stylesheets/materialize.min.css",
+		"/home/agustina/artlantis/app/assets/stylesheets/deprecated/application_bkp.css",
+		"/home/agustina/artlantis/app/assets/stylesheets/deprecated/users.scss",
+		"/home/agustina/artlantis/app/assets/stylesheets/deprecated/paints.scss",
+		"/home/agustina/artlantis/app/assets/stylesheets/deprecated/home.scss",
+		"/home/agustina/artlantis/app/assets/stylesheets/deprecated/custom.css.scss",
+		"/home/agustina/artlantis/app/assets/stylesheets/custom.css.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"idgate",
+			"persistir",
+			"console",
+			"mongocli.write",
+			"mongocli.send",
+			"mongocli.write",
+			"com",
+			"getGWData",
+			"console",
+			"));\n",
+			"emisor",
+			"inhubmod",
+			"Artists&Clients",
+			"artistsnclients",
+			"100",
+			"card-pane",
+			"card",
+			"card-acti",
+			"card",
+			"circular",
+			"submit",
+			"div , class:",
+			"image_tage",
+			"class=",
+			"<img src=",
+			"<a href=",
+			"img-s",
+			"img",
+			".js",
+			".css"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"mongocli.write",
+			"in_hubmod",
+			"Artlantis",
+			"artlantis",
+			"150",
+			"circle",
+			"div class=",
+			"image_tag",
+			", class: ",
+			"<%= image_tage ",
+			"<%= link_to "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "artlantis.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/artlantis/artlantis.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 260.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contactus/new'
+
+  post 'contactus/new'
+
   get 'static_pages/tutorial'
 
   get 'static_pages/tour'
@@ -33,17 +37,18 @@ Rails.application.routes.draw do
 
   get     'help'    => 'static_pages#help'
   get     'about'   => 'static_pages#about'
-  get     'contact' => 'static_pages#contact'
+  get     'contact' => 'contactus#new'
+  get     'browse'  => 'browse#index'
   get     'signup'  => 'users#new'
   get     'login'   => 'sessions#new'
   post    'login'   => 'sessions#create'
-  delete  'logout'  => 'sessions#destroy'
+  post    'contact' => 'contactus#create'
+  get  'logout'  => 'sessions#destroy'
   
   resources :users do
     resources :paints  
   end
   
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
