@@ -91,7 +91,6 @@ p {
 }
 
 .button-collapse {
-  color: #26a69a;
 }
 
 .parallax-container {
@@ -168,14 +167,14 @@ footer.page-footer {
 }
 
 .container.max-width {
-    max-width: 658px;
+    max-width: 800px;
 }
 
 
 .card .card-content{
 }
 .card .card-content .card-title {
-    line-height: 100%;
+    line-height: 60%;
     font-weight: bold;
 }
 .card .card-content p a,.card .card-content p  {

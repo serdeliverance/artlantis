@@ -17,7 +17,7 @@ class PaintsController < ApplicationController
   			redirect_to user_path(@user)
 		  else
 	       flash[:notice] = "the painting hasn't been uploaded"
-			   render "new"
+			   redirect_to edit_user_path(@user)
 		  end
     end
   	
