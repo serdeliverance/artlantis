@@ -36,7 +36,7 @@
             <span class="card-title grey-text text-darken-3">
               <%= paint.title %>
             </span><br>
-            <span class ="green-text text-darken-2">$<%= paint.price %></span> / 
+            <span class ="green-text text-darken-2">$<%= number_with_precision(paint.price, :precision => 2) %></span> / 
             <span class ="green-text text-darken-2"><%= paint.week %> week</span> / 
             <span class ="green-text text-darken-2"><%= paint.pieces %> pieces</span>    
           </div>      

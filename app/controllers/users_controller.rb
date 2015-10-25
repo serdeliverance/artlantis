@@ -16,6 +16,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+	def edit
+  		@user = User.find(params[:id])
+  	end
+
 	def create
 		@user = User.new(user_params)
 
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def update
+  	def update
 	  	@user = User.find(params[:id])
 
 	  	if @user.update_attributes(user_params)
@@ -39,10 +43,6 @@ class UsersController < ApplicationController
 	  	end
   	end
 
-  	def edit
-  		@user = User.find(params[:id])
-  	end
-
   	def destroy
   		User.find(params[:id]).destroy
     	flash[:success] = "User deleted"
@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params.require(:user).permit(:name, :email, :age, :sex, :password,:password_confirmation, :avatar)
+			params.require(:user).permit(:name, :email, :age, :sex, :password,:password_confirmation, :avatar, :description)
 		end
 
 		# Before filters
