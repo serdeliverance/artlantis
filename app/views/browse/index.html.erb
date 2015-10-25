@@ -76,7 +76,7 @@
   <% end %>
 <% end %>
 
- <div id="commissionme" class="modal modal-art">
+ <div id="commissionme" class="modal" style="width: 50%; height=50%;">
     <div class="modal-content">
       <div class="input-field"><input placeholder="Your name" id="Name" type="text" class="validate"></div>
       <div class="input-field"><input placeholder="Your email address" id="email" type="text" class="validate"></div>
@@ -84,7 +84,7 @@
         <textarea id="text" class="materialize-textarea"></textarea>
         <label for="textarea1">A description of your commission request. Don't leave out any details!</label>
       </div>
-       <input type="checkbox" class="filled-in" id="securetrans" checked="checked" />
+       <input type="checkbox" disabled class="filled-in" id="securetrans" checked="checked" />
       <label for="securetrans">Make this a <b>secure transaction</b></label> 
       <a class="modal-trigger" href="#explain">What's this?</a>
     </div>
@@ -95,11 +95,12 @@
   </div>
   
   <div id="explain" class="modal">
-    <div class="modal-content" align="center">
+    <div class="modal-content grey-text darken-2" align="center">
       A secure transaction means that the request will
       be handled through the site. We will give you an ID so you can check on the progress
       of your commission, and we'll withhold the payment to the artist until you've indicated
-      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%. 
+      that it's completed. Should anything happen, we will reimburse you. There's a transaction fee of 8%.<br> <br><br><br>
+      <b>Not available for now.</b>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>

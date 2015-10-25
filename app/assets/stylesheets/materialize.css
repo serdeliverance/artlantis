@@ -6046,6 +6046,7 @@ a.waves-effect .waves-ripple {
   width: 30%;
   overflow-y: auto;
   border-radius: 5px;
+  margin: auto;
   will-change: top, opacity; }
  .modal-art{
 	width: 80%;
